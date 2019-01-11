@@ -1,6 +1,9 @@
 package sample;
 
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
+
+import java.io.File;
 
 public class Editor {
 
@@ -19,8 +22,19 @@ public class Editor {
         createMenus();
 
         open.setOnAction(e -> {
-            System.out.println("Menu Item 1 Selected");
+            openFiles();
         });
+
+    }
+
+    private void openFiles() {
+
+        FileChooser fileChooser =  new FileChooser();
+        fileChooser.setTitle("Open File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files", "*.txt","*.rtf")
+        );
+        // needs work check previous projects .
 
     }
 
