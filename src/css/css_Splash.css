@@ -1,0 +1,14 @@
+.background{
+    -fx-background-image : url("../images/splashBack.jpg");
+  -fx-background-size: cover;
+}
+
+.welcome{
+    -fx-font-size : 16pt;
+    -fx-font-family : "Segoe UI Semibold";
+}
+
+.wait{
+    -fx-font-family : "Segoe UI Semibold";
+
+}

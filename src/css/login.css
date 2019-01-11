@@ -1,0 +1,25 @@
+.loginBack{
+        -fx-background-image : url("../images/loginBack.jpg");
+      -fx-background-size: cover;
+}
+
+.btnExit{
+    -fx-background-color : "red";
+        -fx-text-fill:"yellow";
+
+}
+
+.btnLogin:hover{
+    -fx-background-color:"green";
+    -fx-text-fill:"white";
+}
+
+.loginLbl{
+    -fx-text-fill:"blue";
+}
+
+.loginheader{
+
+-fx-background-color: "white";
+
+}

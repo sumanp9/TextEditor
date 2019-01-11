@@ -1,0 +1,5 @@
+.header{
+     -fx-background-image :url("../images/header.jpg");
+         -fx-background-size: 100%;
+
+    }
