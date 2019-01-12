@@ -17,7 +17,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="491.0" prefWidth="327.0">
+      <AnchorPane fx:id="anchorPane" prefHeight="491.0" prefWidth="327.0">
          <children>
             <MenuBar fx:id="menuBar" layoutY="1.0" prefHeight="25.0" prefWidth="335.0" />
             <GridPane hgap="5.0" layoutX="215.0" layoutY="26.0" prefHeight="0.0" prefWidth="105.0">
@@ -43,7 +43,7 @@
                   <Button fx:id="btnUnderline" mnemonicParsing="false" text="U" GridPane.columnIndex="2" />
                </children>
             </GridPane>
-            <TextArea fx:id="txtArea" layoutX="8.0" layoutY="52.0" prefHeight="430.0" prefWidth="314.0" />
+            <TextArea fx:id="txtArea" layoutX="8.0" layoutY="52.0" prefColumnCount="300" prefHeight="430.0" prefWidth="314.0" />
          </children>
       </AnchorPane>
    </children>
