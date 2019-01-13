@@ -15,8 +15,12 @@ public class Editor {
     private Stage stage;
     public AnchorPane anchorPane;
 
+    public boolean savedFile = false,unedited = false;
 
-    public MenuItem open = new MenuItem("Open File"),
+
+    public MenuItem
+            newFile =  new MenuItem("New File"),
+            open = new MenuItem("Open File"),
             save =  new MenuItem("Save File") ,
             close = new MenuItem("Exit");
     public Menu file =  new Menu("File"),
@@ -27,18 +31,79 @@ public class Editor {
     public void initialize(){
         createMenus();
 
+        newFile.setOnAction(event -> {
+            createNewFile();
+        });
+
         open.setOnAction(e -> {
             try {
                 openFiles();
+                unedited =  true;
             } catch (IOException e1) {
-                e1.printStackTrace();
-                System.out.println("Cannot opeen the file that u were trying to.");
+               // e1.printStackTrace();
+                System.out.println("Cannot open the file that u were trying to.");
             }
+        });
+
+        save.setOnAction(event -> {
+            saveFile();
         });
 
         close.setOnAction(event -> {
             closeWindow();
         });
+
+    }
+
+    private void createNewFile() {
+        if(!(txtArea.getText().isEmpty())){
+            if(unedited == false || savedFile == false){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Please Save ur file");
+                alert.setContentText("Please saved the file first");
+                alert.showAndWait();
+
+                saveFile();
+
+                txtArea.clear();
+            }
+            else{
+                txtArea.clear();
+            }
+
+        }
+
+        System.out.println(savedFile);
+        System.out.println(txtArea.getText().isEmpty());
+
+    }
+
+
+
+
+    private void saveFile() {
+        stage = (Stage)anchorPane.getScene().getWindow();
+
+        FileChooser fileChooser =  new FileChooser();
+        fileChooser.setTitle("Save File");
+
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files  *.txt, *.rtf", "*.txt","*.rtf")
+
+        );
+
+        File saveFile = fileChooser.showSaveDialog(stage);
+        try{
+            PrintWriter writer;
+            writer =  new PrintWriter(saveFile);
+            writer.println(txtArea.getText());
+            writer.close();
+            savedFile =  true;
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -51,6 +116,7 @@ public class Editor {
 
         FileChooser fileChooser =  new FileChooser();
         fileChooser.setTitle("Open File");
+
 
         stage = (Stage)anchorPane.getScene().getWindow();
 
@@ -84,7 +150,7 @@ public class Editor {
     }
 
     private void createMenus() {
-        file.getItems().addAll(open,save,close);
+        file.getItems().addAll(newFile,open,save,close);
         menuBar.getMenus().addAll(file,Edit,About);
     }
 
