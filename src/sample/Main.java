@@ -24,7 +24,7 @@ public class Main extends Application {
 
         newStage.setScene(new Scene(root1));
         newStage.setTitle("Editor");
-        newStage.initStyle(StageStyle.TRANSPARENT);
+        //newStage.initStyle(StageStyle.TRANSPARENT);
 
         //TextField foo = (TextField)fxmlLoader.getNamespace().get("txtNum1");
         //foo.requestFocus();

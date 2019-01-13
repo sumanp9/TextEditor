@@ -1,7 +1,9 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -22,7 +24,9 @@ public class Editor {
             newFile =  new MenuItem("New File"),
             open = new MenuItem("Open File"),
             save =  new MenuItem("Save File") ,
-            close = new MenuItem("Exit");
+            close = new MenuItem("Exit"),
+
+            aboutUS = new MenuItem("Editor v1.0");
     public Menu file =  new Menu("File"),
             About = new Menu ("About");
 
@@ -51,6 +55,11 @@ public class Editor {
         close.setOnAction(event -> {
             closeWindow();
         });
+
+        aboutUS.setOnAction(event -> {
+            showAbout();
+        });
+
 
     }
 //
@@ -148,10 +157,31 @@ public class Editor {
         txtArea.setText(lines);
     }
 
+    public void showAbout(){
+
+    }
+
     private void createMenus() {
         file.getItems().addAll(newFile,open,save,close);
+        About.getItems().add(aboutUS);
         menuBar.getMenus().addAll(file,About);
     }
 
 
+    public void btnBoldPressed(ActionEvent actionEvent) {
+
+
+        txtArea.setFont(Font.font("Verdana", FontWeight.BOLD,12));
+        //txtArea.setText();
+    }
+
+    public void btnItalicPressed(ActionEvent actionEvent) {
+        txtArea.setFont(Font.font("Verdana", FontPosture.ITALIC,12));
+
+    }
+
+    public void btnUnderlinePressed(ActionEvent actionEvent) {
+
+
+    }
 }

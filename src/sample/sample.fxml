@@ -30,17 +30,17 @@
                 <RowConstraints />
               </rowConstraints>
                <children>
-                  <Button fx:id="btnBold" mnemonicParsing="false" prefHeight="25.0" prefWidth="46.0" text="B">
+                  <Button fx:id="btnBold" mnemonicParsing="false" onAction="#btnBoldPressed" prefHeight="25.0" prefWidth="46.0" text="B">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnItalic" lineSpacing="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="37.0" text="I" GridPane.columnIndex="1">
+                  <Button fx:id="btnItalic" lineSpacing="10.0" mnemonicParsing="false" onAction="#btnItalicPressed" prefHeight="25.0" prefWidth="37.0" text="I" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Italic" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnUnderline" mnemonicParsing="false" text="U" GridPane.columnIndex="2" />
+                  <Button fx:id="btnUnderline" mnemonicParsing="false" onAction="#btnUnderlinePressed" text="U" GridPane.columnIndex="2" />
                </children>
             </GridPane>
             <TextArea fx:id="txtArea" layoutX="8.0" layoutY="52.0" prefColumnCount="300" prefHeight="430.0" prefWidth="314.0" />
