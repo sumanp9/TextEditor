@@ -24,7 +24,6 @@ public class Editor {
             save =  new MenuItem("Save File") ,
             close = new MenuItem("Exit");
     public Menu file =  new Menu("File"),
-            Edit = new Menu("Edit"),
             About = new Menu ("About");
 
 
@@ -151,7 +150,7 @@ public class Editor {
 
     private void createMenus() {
         file.getItems().addAll(newFile,open,save,close);
-        menuBar.getMenus().addAll(file,Edit,About);
+        menuBar.getMenus().addAll(file,About);
     }
 
 
