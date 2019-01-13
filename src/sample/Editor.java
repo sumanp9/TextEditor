@@ -54,7 +54,7 @@ public class Editor {
         });
 
     }
-
+//
     private void createNewFile() {
         if(!(txtArea.getText().isEmpty())){
             if(unedited == false || savedFile == false){
